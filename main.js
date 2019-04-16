@@ -1,3 +1,4 @@
+
 /* question 1~Write the function printInt(n) taking one parameter n 
 and print all natural numbers from 1 to n in console.*/
 // Write the function printInt(n)
@@ -10,13 +11,14 @@ function printInt(n) {
  /* var i =1;i <= n shiyu method*/
   // stop: n
 
-  for(var x = 1; x <= n; x++){
-    console.log(x)
+  for(var i = 1;i<=n;i++){
+    console.log(i);
 // step: +1
   }
 }
   // Gotta run the code
-  printInt(10);
+  //printInt(10);
+  printInt(13);
 
 
   /*Question#2-Write the function printIntRev(n) taking one parameter n and 
@@ -24,12 +26,12 @@ function printInt(n) {
 
    function printIntRev(n){
      var x =1
-     while(x <= n; x--;){
-      console.log
+     for(var i=n;i>=1;i--) {
+      console.log(i)
      }
    
    }
-   printIntRev(n)
+   printIntRev(22)
 
 
 
@@ -48,12 +50,24 @@ function printInt(n) {
        checkInput([1,2,3,4]) =====> -1 */
 
 function checkInput(x){
-
+if(typeof x === "number") {
+  return "number" //typeof x = number,string or boolean
+} else if (typeof x === "string") {
+  return "string";
+}else if (typeof x === "boolean") {
+  return "boolean"
+} else {
+  return -1;
+}
 }
 
-
-
-
+//another method for Q#3
+/*if (typeof x ==="number" || typeof x ==="string" || typeof x === "boolean"){
+  return typeof x;
+}else {
+  return -1;
+}
+console.log(checkInput(132)) */
 
 
 /* Question #4-Write the function simpleEvenAdding(num) taking a number and
@@ -66,17 +80,21 @@ function checkInput(x){
 
          function simpleEvenAdding(num){
            //store the answer
-           var solution = simpleEvenAdding
+           var solution = 0
            // Loop over numbers from 1 to num
            for(var i=1;i<=num;i++){
            // check if current index is even or odd
            if(i % 2 === 0){
              solution += i;
            }
+           //another method Q#4
+           //for(var i=0;i<=num;1+=2){
+           //solution += i;
+           //}  
            }
            return solution.splice(0,1);
          }
-         console.log(simpleEvenAdding(10));
+         console.log(simpleEvenAdding(5));
 
 
 
@@ -99,13 +117,13 @@ letterCapitalize(“you cannot find the answer online”) =====>  “You Cannot 
       var words = str.split(" ");
   
       for(var i=0;i<=words.length;i++){
-        var upperWord = words[i][0].replace(words[i][0].toUpperCase())
+        var upperWord = words[i][0].replace(words[i][0].toUpperCase());
         solution += upperWord;
       }
-      
+      // var slicedSolution = solution.slice(0,1);
       return solution.slice(1);
      }
-     console.log(letterCapitalize("i love code"))
+     console.log(letterCapitalize("i love code"));
 
 
 
@@ -118,7 +136,7 @@ letterCapitalize(“you cannot find the answer online”) =====>  “You Cannot 
 
 
      function simpleReverse(str){
-      var strarray = str.split("")
+      var strArray = str.split("")
       var revArray = strArray.reverse()
       revArray.join("")
       return str.reverse();
@@ -161,8 +179,11 @@ letterCapitalize(“you cannot find the answer online”) =====>  “You Cannot 
     //Hints: Dividing and modulo the number 60.
     
     function timeConvert(num) {
-      var hour = parseint(num/60);
+      //getting the hour
+      var hour = parseInt(num/60);
+      //getting the minutes
       var minutes = num % 60
+      //combine the answers
       return hour + ":" + minutes
     }
     console.log(timeConvert(123));
@@ -180,7 +201,7 @@ letterCapitalize(“you cannot find the answer online”) =====>  “You Cannot 
 //findStr(“ha”,”abcde”)=======> 0
 //findStr(“h”, “hihelloho”)======> 3
 
-function findStr(str, long) {
+ function findStr(str, long) {
   var splittedArray = long.split(str);
 return splittedArray.length - 1;
 }
@@ -204,15 +225,20 @@ number between them, including the bounds. */
 
 function selfDividingNumbers(left, right){
   var solutiion = [];
-  for(var i=left;)
-
-}
+  for(var i=left;i<=right;i++){
+    if(isSelfDividing(i)){
+      solution.push(i)
+    }
+  }
+ return solution,
+} 
 function isSelfDividing(num){
-  var digit = num.toString(.split(""));
-  for(var=0;i< DOMStringList.length;i++){
-    if(num % digits[i] !=== 0);
+  var digit = num.toString().split("");
+  for(var i=0;i< digits.length;i++){
+    if(num % digits[i] !== 0);{
     return false;
   }
+}
   return true; 
 }
 console.log(selfDividingNumbers(1,22));
@@ -235,14 +261,14 @@ function moveZeros(nums){
 var counter = 0;
 var solution =[];
 for(i=0;i<num.length;i++){
-  if(nums[i]==== 0);
+  if(nums[i]=== 0);
   counter++;
 }else{
   solution.push(nums[i]);
 }
 }
 for(var j=counter;j>0;j++){
-  solution.push(0;)
+  solution.push(0)
 }
 return solution;
 console.log(moveZeros([1,0,21,4,0,0,4]))
