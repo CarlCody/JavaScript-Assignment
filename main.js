@@ -68,10 +68,15 @@ function checkInput(x){
            //store the answer
            var solution = simpleEvenAdding
            // Loop over numbers from 1 to num
-           for(){
+           for(var i=1;i<=num;i++){
            // check if current index is even or odd
+           if(i % 2 === 0){
+             solution += i;
            }
+           }
+           return solution.splice(0,1);
          }
+         console.log(simpleEvenAdding(10));
 
 
 
@@ -91,9 +96,16 @@ letterCapitalize(“you cannot find the answer online”) =====>  “You Cannot 
        // slice method needed & toUpperCase used
 
      function letterCapitalize(str){
+      var words = str.split(" ");
+  
+      for(var i=0;i<=words.length;i++){
+        var upperWord = words[i][0].replace(words[i][0].toUpperCase())
+        solution += upperWord;
+      }
       
-       
+      return solution.slice(1);
      }
+     console.log(letterCapitalize("i love code"))
 
 
 
@@ -105,9 +117,13 @@ letterCapitalize(“you cannot find the answer online”) =====>  “You Cannot 
      // simpleReverse(‘I Love Code’) ======> ‘edoC evoL I’
 
 
-     function simpleReverse(str)(
-
-     )
+     function simpleReverse(str){
+      var strarray = str.split("")
+      var revArray = strArray.reverse()
+      revArray.join("")
+      return str.reverse();
+     }
+     console.logrevArray.join("Good Morning")
 
 
 
@@ -125,8 +141,11 @@ letterCapitalize(“you cannot find the answer online”) =====>  “You Cannot 
     //find min and max in arry
 
     function findDiff(arr) {
-
+       var max = Math.max(...arr)
+       var min = Math.min(...arr)
+       return max - min;
     }
+    console.log(findDiff([1,2,3,5,4,10,2]));
 
 
 
@@ -142,8 +161,11 @@ letterCapitalize(“you cannot find the answer online”) =====>  “You Cannot 
     //Hints: Dividing and modulo the number 60.
     
     function timeConvert(num) {
-
+      var hour = parseint(num/60);
+      var minutes = num % 60
+      return hour + ":" + minutes
     }
+    console.log(timeConvert(123));
 
 
 
@@ -159,7 +181,8 @@ letterCapitalize(“you cannot find the answer online”) =====>  “You Cannot 
 //findStr(“h”, “hihelloho”)======> 3
 
 function findStr(str, long) {
-
+  var splittedArray = long.split(str);
+return splittedArray.length - 1;
 }
 
 
@@ -180,8 +203,19 @@ number between them, including the bounds. */
 //selfDividingNumbers(12, 21) =======> [12, 15]
 
 function selfDividingNumbers(left, right){
+  var solutiion = [];
+  for(var i=left;)
 
 }
+function isSelfDividing(num){
+  var digit = num.toString(.split(""));
+  for(var=0;i< DOMStringList.length;i++){
+    if(num % digits[i] !=== 0);
+    return false;
+  }
+  return true; 
+}
+console.log(selfDividingNumbers(1,22));
 
 
 
@@ -198,8 +232,20 @@ function selfDividingNumbers(left, right){
 
 
 function moveZeros(nums){
-
+var counter = 0;
+var solution =[];
+for(i=0;i<num.length;i++){
+  if(nums[i]==== 0);
+  counter++;
+}else{
+  solution.push(nums[i]);
 }
+}
+for(var j=counter;j>0;j++){
+  solution.push(0;)
+}
+return solution;
+console.log(moveZeros([1,0,21,4,0,0,4]))
 
 
 
@@ -211,9 +257,17 @@ function moveZeros(nums){
 //average([2, 3, 3, 5, 7, 10]) ======> 5
 //average([7, 1432, 12, 13, 100]) ======> 312.8
 //average([]) ======> 0
+if(nums.length === 0);
+return 0;
 
-
-
+function average(nums){
+  var sum =0;
+  for(var i=0;i<nums.length;i++){
+    sum += nums[i];
+  }
+  return sum / nums.length
+}
+console.log(average([1,2,5,7,10]));
 
 
 
